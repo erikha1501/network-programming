@@ -1,0 +1,144 @@
+syntax = "proto3";
+
+package pgame;
+
+message PlayerIdentity {
+    uint32 room_id = 1;
+    uint32 player_id = 2;
+}
+
+message JoinGameRequest {
+    PlayerIdentity player_identity = 1;
+}
+
+message JoinGameResponse {
+    bool success = 1;
+    MapInfo map_info = 2;
+}
+
+message MapInfoReceived {
+    PlayerIdentity player_identity = 1;
+}
+
+message GameStatusChanged {
+    enum Status {
+        Error = 0;
+        Starting = 1;
+        CountingDown = 2;
+        Started = 3;
+        Ended = 4;
+    }
+
+    message StartingInfo {
+        repeated uint32 connected_player_ids = 1;
+    }
+
+    message CountingDownInfo {
+        float countdown_value = 1;
+    }
+
+    message EndInfo {
+        // enum EndKind {
+        //     Timeout = 0;
+        //     Winner = 1;
+        // }
+
+        // EndKind end_kind = 1;
+        repeated uint32 winner_ids = 2;
+    }
+
+    Status status = 1;
+
+    StartingInfo starting_info = 2;
+    CountingDownInfo countingdown_info = 3;
+    EndInfo end_info = 4;
+}
+
+
+message MapInfo {
+    message PlayerTilePosition {
+        uint32 player_id = 1;
+        uint32 x = 2;
+        uint32 y = 3;
+    }
+
+    uint32 width = 1;
+    uint32 height = 2;
+
+    bytes map_data = 3;
+
+    repeated PlayerTilePosition player_spawn_positions = 4;
+}
+
+message ConnectionPing {
+}
+
+message ConnectionPong {
+    PlayerIdentity player_identity = 1;
+}
+
+message PlayerInput {
+    PlayerIdentity player_identity = 1;
+
+    uint32 sequence_num = 2;
+
+    float direction_x = 3;
+    float direction_y = 4;
+    bool bomb_placed = 5;
+}
+
+message GameState {
+    message PlayerState {
+        enum ConnectionState {
+            DISCONNECTED = 0;
+            CONNECTED = 1;
+        }
+        enum State {
+            DEAD = 0;
+            ALIVE = 1;
+        }
+
+        uint32 player_id = 1;
+        ConnectionState connection_state = 2;
+        State state = 3;
+    
+        float position_x = 4;
+        float position_y = 5;
+    
+        float direction_x = 6;
+        float direction_y = 7;
+    }
+
+    message BombState {
+        uint32 id = 1;
+
+        uint32 position_x = 2;
+        uint32 position_y = 3;
+
+        uint32 range = 4;
+    }
+
+    message PowerupState {
+        enum Type {
+            UNKNOWN = 0;
+            BOMB_QUANTITY = 1;
+            BOMB_RANGE = 2;
+            SPEEDUP = 3;
+        }
+        uint32 id = 1;
+
+        uint32 position_x = 2;
+        uint32 position_y = 3;
+
+        Type powerup_type = 4;
+    }
+
+    uint32 sequence_num = 1;
+
+    float game_timer = 2;
+
+    bytes map_data = 3;
+    repeated PlayerState player_states = 4;
+    repeated BombState bomb_states = 5;
+    repeated PowerupState powerup_states = 6;
+}
