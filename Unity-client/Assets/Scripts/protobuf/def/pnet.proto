@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+package pnet;
+
+message ClientInfo {
+    uint32 id = 1;
+    string name = 2;
+}
+
+message RoomInfo {
+    enum Status {
+        Idle = 0;
+        InGame = 1;
+    }
+
+    uint32 id = 1;
+    uint32 owner_id = 2;
+    Status status = 3;
+    bool is_full = 4;
+    repeated ClientInfo clients = 5;
+}
+
+message ClientIdentity {
+    uint32 room_id = 1;
+    uint32 client_id = 2;
+}
+
+message ConnectionPing {
+}
+
+message ConnectionPong {
+    ClientIdentity client_identity = 1;
+}
+
+message ServerConnectionPing {
+}
+
+message ServerConnectionPong {
+}
+
+message QueryRoomInfoRequest {
+    bool not_full = 1;
+}
+
+message QueryRoomInfoResponse {
+    repeated RoomInfo rooms = 1;
+}
+
+message CreateRoomRequest {
+    ClientInfo client_info = 1;
+}
+
+message CreateRoomResponse {
+    bool success = 1;
+    ClientIdentity assigned_identity = 2;
+
+    RoomInfo room_info = 3;
+}
+
+message JoinRoomRequest {
+    ClientInfo client_info = 1;
+    uint32 room_id = 2;
+}
+
+message JoinRoomResponse {
+    bool success = 1;
+    ClientIdentity assigned_identity = 2;
+
+    RoomInfo room_info = 3;
+}
+
+message LeaveRoomRequest {
+    ClientIdentity client_identity = 1;
+}
+
+message LeaveRoomResponse {
+    bool success = 1;
+}
+
+message QuerySelfRoomInfoRequest {
+    ClientIdentity client_identity = 1;
+}
+
+message RoomInfoChanged {
+    RoomInfo new_room_info = 1;
+}
+
+
+message StartGameRequest {
+    ClientIdentity client_identity = 1;
+}
+
+message StartGameResponse {
+    bool success = 1;
+}
+
+message GameCreated {
+    uint32 ip_address = 1;
+    uint32 port = 2;
+}

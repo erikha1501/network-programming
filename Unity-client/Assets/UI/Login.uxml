@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="Styles/common.uss" />
+    <Style src="Styles/login.uss" />
+    <ui:VisualElement style="width: 100%; height: 100%; align-items: center; justify-content: flex-start; background-color: rgb(163, 221, 203);">
+        <ui:VisualElement style="width: 100%; flex-direction: row; justify-content: flex-end; margin-top: 5px; margin-right: 5px;">
+            <ui:Label text="Server IP" display-tooltip-when-elided="true" style="-unity-text-align: middle-left; color: rgba(0, 0, 0, 255); font-size: 15px;" />
+            <ui:TextField value="127.0.0.1" text="127.0.0.1" name="text-serverAddress" style="width: 20%; margin-right: 0; font-size: 15px; margin-left: 0; margin-top: 0; margin-bottom: 0; height: 25px; padding-left: 4px;" />
+            <ui:Button text="&#10;" display-tooltip-when-elided="true" name="button-testConnection" style="background-color: rgb(159, 159, 159); width: 25px; height: 25px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; background-image: resource(&apos;UITexture/invalid&apos;); -unity-background-image-tint-color: rgba(255, 88, 0, 255); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="align-items: center; top: 30%; position: absolute;">
+            <ui:Label text="Boom Online 2" display-tooltip-when-elided="true" style="font-size: 30px; -unity-font-style: bold; padding-bottom: 50px; color: rgb(255, 255, 255);" />
+            <ui:VisualElement name="login-form" class="login-form">
+                <ui:TextField text="Enter your name..." name="text-playerName" style="height: 30px;" />
+                <ui:Button text="Play" display-tooltip-when-elided="true" name="button-playGame" class="login-button" style="background-color: rgb(230, 181, 102);" />
+                <ui:Button text="Exit" display-tooltip-when-elided="true" name="button-exitGame" class="login-button" style="background-color: rgb(229, 112, 126);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,36 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="Styles/common.uss" />
+    <Style src="Styles/room.uss" />
+    <ui:VisualElement style="align-items: center; justify-content: center; height: 100%; width: 100%; background-color: rgb(163, 221, 203);">
+        <ui:VisualElement style="width: 80%; height: 80%; align-items: center; justify-content: flex-start;">
+            <ui:VisualElement class="room-item" style="flex-direction: row;">
+                <ui:Label text="0" display-tooltip-when-elided="true" name="label-roomID" style="-unity-text-align: middle-center; font-size: 30px; width: 15%;" />
+                <ui:VisualElement style="width: 85%; flex-direction: row; justify-content: flex-start; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 1px;">
+                    <ui:Label text="Tuan con&apos;s room" display-tooltip-when-elided="true" name="label-roomName" style="-unity-text-align: middle-left; font-size: 15px; margin-left: 15px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="playerContainer" class="player-container" style="flex-direction: row; justify-content: space-between; width: 100%; margin-top: 20%; margin-bottom: 20%; height: 30%;">
+                <ui:VisualElement class="player-card" style="height: 100%;">
+                    <ui:VisualElement class="player-icon" style="background-image: url(&apos;/Assets/Sprites/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Idle (32x32).png#Idle (32x32)_0&apos;); -unity-background-image-tint-color: rgb(0, 0, 0); height: 80%;" />
+                    <ui:Label text="con cho tuan" display-tooltip-when-elided="true" class="player-name" />
+                </ui:VisualElement>
+                <ui:VisualElement class="player-card">
+                    <ui:VisualElement class="player-icon" style="background-image: url(&apos;/Assets/Sprites/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Idle (32x32).png#Idle (32x32)_0&apos;);" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" class="player-name" />
+                </ui:VisualElement>
+                <ui:VisualElement class="player-card">
+                    <ui:VisualElement class="player-icon" style="background-image: url(&apos;/Assets/Sprites/Pixel Adventure 1/Assets/Main Characters/Pink Man/Idle (32x32).png#Idle (32x32)_0&apos;);" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" class="player-name" />
+                </ui:VisualElement>
+                <ui:VisualElement class="player-card">
+                    <ui:VisualElement class="player-icon" style="background-image: url(&apos;/Assets/Sprites/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Idle (32x32).png#Idle (32x32)_0&apos;);" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" class="player-name" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-direction: row; justify-content: space-between; width: 100%; height: 15%;">
+                <ui:Button text="Leave Room" display-tooltip-when-elided="true" name="button-leaveRoom" class="room-button" style="background-color: rgb(229, 112, 126);" />
+                <ui:Button text="Start Game" display-tooltip-when-elided="true" name="button-startGame" class="room-button" style="background-color: rgb(230, 181, 102);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="Styles/common.uss" />
+    <Style src="Styles/GameEnd.uss" />
+    <ui:VisualElement style="width: 100%; height: 100%; align-items: center; justify-content: center; background-color: rgba(108, 108, 108, 0.43);">
+        <ui:Label text="Winner(s)" display-tooltip-when-elided="true" style="font-size: 35px; color: rgb(0, 0, 0); -unity-font-style: bold;" />
+        <ui:VisualElement name="playerContainer" class="player-container" style="flex-direction: row; justify-content: space-between; width: 100%; margin-top: 10%; margin-bottom: 10%; height: 30%;">
+            <ui:VisualElement class="player-card" style="height: 100%;">
+                <ui:VisualElement class="player-icon" style="background-image: url(&apos;/Assets/Sprites/Pixel Adventure 1/Assets/Main Characters/Mask Dude/Idle (32x32).png#Idle (32x32)_0&apos;); -unity-background-image-tint-color: rgb(0, 0, 0); height: 80%;" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" class="player-name" />
+            </ui:VisualElement>
+            <ui:VisualElement class="player-card">
+                <ui:VisualElement class="player-icon" style="background-image: url(&apos;/Assets/Sprites/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Idle (32x32).png#Idle (32x32)_0&apos;);" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" class="player-name" />
+            </ui:VisualElement>
+            <ui:VisualElement class="player-card">
+                <ui:VisualElement class="player-icon" style="background-image: url(&apos;/Assets/Sprites/Pixel Adventure 1/Assets/Main Characters/Pink Man/Idle (32x32).png#Idle (32x32)_0&apos;);" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" class="player-name" />
+            </ui:VisualElement>
+            <ui:VisualElement class="player-card">
+                <ui:VisualElement class="player-icon" style="background-image: url(&apos;/Assets/Sprites/Pixel Adventure 1/Assets/Main Characters/Virtual Guy/Idle (32x32).png#Idle (32x32)_0&apos;);" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" class="player-name" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

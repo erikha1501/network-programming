@@ -1,0 +1,19 @@
+.player-card {
+    height: 100%;
+    width: 25%;
+}
+
+.player-card > .player-icon {
+    -unity-background-scale-mode: scale-to-fit;
+    width: 100%;
+    height: 80%;
+}
+
+.player-card > .player-name {
+    width: 100%;
+    height: 20%;
+    -unity-text-align: middle-center;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    background-color: rgb(255, 184, 184);
+}

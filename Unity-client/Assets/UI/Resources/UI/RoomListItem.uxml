@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="/Assets/UI/Styles/lobby.uss" />
+    <ui:VisualElement class="room-item" style="flex-direction: row;">
+        <ui:Label text="0" display-tooltip-when-elided="true" name="label-roomID" style="-unity-text-align: middle-center; font-size: 30px; width: 15%;" />
+        <ui:VisualElement style="width: 70%; flex-direction: row; justify-content: flex-start; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 1px; border-right-width: 1px;">
+            <ui:Label text="Tuan con&apos;s room" display-tooltip-when-elided="true" name="label-roomName" style="-unity-text-align: middle-left; font-size: 15px; margin-left: 15px;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="width: 15%; height: 100%;">
+            <ui:VisualElement style="height: 60%; background-image: url(&apos;/Assets/UI/Texture/players.png&apos;); -unity-background-scale-mode: scale-to-fit; margin-top: 5px;" />
+            <ui:Label text="3/4&#10;" display-tooltip-when-elided="true" name="label-roomPlayerCount" style="width: 100%; -unity-text-align: upper-center; color: rgb(0, 210, 39); -unity-font-style: bold;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
